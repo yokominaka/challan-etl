@@ -112,7 +112,7 @@ def generate_records(num_records=10000):
             "Amount_Collected_PKR": amount_collected,
         })
 
-    # Locate base project directory and save output inside data/ folder
+    #base project directory and save output inside data/ folder
     base_dir = Path(__file__).resolve().parent.parent
     data_dir = base_dir / "data"
     os.makedirs(data_dir, exist_ok=True)
