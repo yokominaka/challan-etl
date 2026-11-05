@@ -1,6 +1,6 @@
 import time 
 import requests
-API_URL = "http://127.0.0.1:8000/api/v1/challans"
+API_URL="http://127.0.0.1:8000/api/v1/challans"
 
 
 def fetch_challan(batch_size: int = 500) -> list[dict]:

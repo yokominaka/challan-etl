@@ -2,10 +2,10 @@ from pathlib import Path
 import pandas as pd
 from sqlalchemy import create_engine
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-DB_PATH = BASE_DIR / "data" / "echallan_db.sqlite"
+BASE_DIR= Path(__file__).resolve().parent.parent
+DB_PATH= BASE_DIR / "data" / "echallan_db.sqlite"
 
-engine = create_engine(f"sqlite:///{DB_PATH}")
+engine=create_engine(f"sqlite:///{DB_PATH}")
 
 
 def load_to_database(
@@ -18,7 +18,7 @@ def load_to_database(
     print("Starting Database Ingestion...")
 
     try:
-        # Pass table_name as the first positional argument, and con=engine
+        # table_name first positional argument and con=engine
         df.to_sql(name=table_name, con=engine, if_exists="replace", index=False)
 
         print(

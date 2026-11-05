@@ -31,6 +31,7 @@ class EChallanModel(BaseModel):
             raise ValueError("Unpaid challans cannot have non-zero collection!")
         return self
 
+
 def transform_and_validate(raw_records: list[dict]) -> pd.DataFrame:
     """Validates records with Pydantic and converts valid items to a Pandas DataFrame."""
     valid_records=[]
