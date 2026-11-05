@@ -4,7 +4,7 @@ import pandas as pd
 from pydantic import BaseModel, Field, ValidationError, model_validator
 
 
-# 1. Define Pydantic Schema for Validation
+# pydantic modal
 class EChallanModel(BaseModel):
     Challan_ID: str = Field(..., validation_alias="Challan ID")
     Date: str
@@ -31,8 +31,6 @@ class EChallanModel(BaseModel):
             raise ValueError("Unpaid challans cannot have non-zero collection!")
         return self
 
-
-# 2. Main Transformation & Validation Function
 def transform_and_validate(raw_records: list[dict]) -> pd.DataFrame:
     """Validates records with Pydantic and converts valid items to a Pandas DataFrame."""
     valid_records=[]
@@ -46,7 +44,7 @@ def transform_and_validate(raw_records: list[dict]) -> pd.DataFrame:
             valid_records.append(validated_obj.model_dump())
         except ValidationError as err:
             invalid_count += 1
-            # Print the error for the first failed record to inspect
+
             if invalid_count == 1:
                 print("Validation Error Details for Record #1:")
                 print(err)
