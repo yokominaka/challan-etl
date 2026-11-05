@@ -10,11 +10,9 @@ An end-to-end data engineering and statistical machine learning analytics platfo
 
 ---
 
-## 🌐 Live Production Links
+## 🌐 Live Production Link
 
 - **Executive Web Dashboard:** [https://challan-etl.onrender.com/](https://challan-etl.onrender.com/)
-- **Interactive API Documentation:** [https://challan-etl.onrender.com/docs](https://challan-etl.onrender.com/docs)
-- **API Health Check:** [https://challan-etl.onrender.com/health](https://challan-etl.onrender.com/health)
 - **GitHub Repository:** [https://github.com/yokominaka/challan-etl](https://github.com/yokominaka/challan-etl)
 
 ---
@@ -28,7 +26,7 @@ The root web application (`index.html`) is a production-grade, single-page execu
 
 ---
 
-## 📊 Ground-Truth Analytical Findings (Objectives 1-7)
+## 📊 Analytical Findings
 
 | Metric | Ground-Truth Value | Description |
 | :--- | :--- | :--- |
@@ -148,10 +146,3 @@ python e_challan_etl/main.py
 ```bash
 python e_challan_etl/scripts/eda.py
 ```
-
----
-
-## ☁️ Deployment
-
-- **Render (Live):** Configured as a Web Service running `uvicorn e_challan_etl.api.main:app --host 0.0.0.0 --port $PORT`. Serves both the interactive dashboard at `/` and the REST endpoints at `/api/v1/challans`.
-- **Vercel / GitHub Pages (Optional):** Can also be hosted as a zero-config static site by pointing to `index.html`.
